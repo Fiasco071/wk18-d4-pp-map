@@ -1,0 +1,29 @@
+<h1>Package Status </h1>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Sender Name</th>
+                <th>Recipient</th>
+                <th>Origin</th>
+                <th>Destination</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for package in packages %}
+            <tr>
+                <td>{{package.id}}</td>
+                <td>{{package.name}}</td>
+                <td>{{package.recipient}}</td>
+                <td>{{package.origin}}</td>
+                <td>{{package.destination}}</td>
+                <td>{{package.location}}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
