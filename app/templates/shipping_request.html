@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    {% if title %}
+    <title>{{ title }} - Package Tracker!</title>
+    {% else %}
+    <title>Welcome to Package Tracker!</title>
+    {% endif %}
+</head>
+
+<body>
+
+    <form method="POST" action="">
+        {{ form.csrf_token }}
+        <div>
+            {{ form.name_sender.label }} {{ form.name_sender }}
+            {% if form.name_sender.errors %}
+            <ul>
+                {% for error in form.name_sender.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <div>
+            {{ form.name_recip.label }} {{ form.name_recip }}
+            {% if form.name_recip.errors %}
+            <ul>
+                {% for error in form.name_recip.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <div>
+            {{ form.origin.label }} {{ form.origin }}
+            {% if form.origin.errors %}
+            <ul>
+                {% for error in form.origin.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <div>
+            {{ form.destination.label }} {{ form.destination }}
+            {% if form.destination.errors %}
+            <ul>
+                {% for error in form.destination.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <div>
+            {{ form.expressCheck.label }} {{ form.expressCheck }}
+            {% if form.expressCheck.errors %}
+            <ul>
+                {% for error in form.expressCheck.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <div>{{ form.submit }} {{ form.cancel }}</div>
+    </form>
+</body>
+
+</html>
